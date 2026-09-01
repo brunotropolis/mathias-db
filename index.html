@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex"><!-- landing dedicada ao criativo Mathias 008 — nao indexar -->
-<link rel="preload" as="image" href="/assets/mathias-antes-depois.webp" fetchpriority="high">
+<link rel="preload" as="image" href="/assets/mathias-antes-depois.webp" imagesrcset="/assets/mathias-antes-depois-820.webp 820w, /assets/mathias-antes-depois.webp 1400w" imagesizes="(max-width:900px) 92vw, 520px" fetchpriority="high">
 <title>Dream Baby Pocket — Do colo pro berço, sem choro</title>
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
@@ -48,13 +48,22 @@ fbq('init', '2103631056813206');
 })();
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2199334337151314&ev=PageView&noscript=1"/></noscript>
-<!-- Microsoft Clarity (conta Dream Baby — mesmo do dbpocket/perfis; separa por URL no painel) -->
+<!-- Microsoft Clarity (conta Dream Baby — mesmo do dbpocket/perfis; separa por URL no painel).
+     DEFERIDO: carrega no 1o gesto (scroll/toque/clique) ou ~2.5s apos o load — tira o Clarity do
+     caminho critico/TBT inicial (ganho de PageSpeed) sem perder a sessao de quem engaja. -->
 <script type="text/javascript">
-(function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window,document,"clarity","script","iea4ittipt");
+(function(){
+  var loaded=false;
+  function loadClarity(){ if(loaded)return; loaded=true;
+    (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","iea4ittipt"); }
+  var evs=['scroll','pointerdown','keydown','touchstart','mousemove'];
+  function onInteract(){ evs.forEach(function(e){window.removeEventListener(e,onInteract)}); loadClarity(); }
+  evs.forEach(function(e){window.addEventListener(e,onInteract,{passive:true,once:true})});
+  window.addEventListener('load',function(){ setTimeout(loadClarity,2500); });
+})();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -304,7 +313,7 @@ footer .copy{font-size:12.5px;color:rgba(255,255,255,.4)}
       <div class="hero-foto reveal">
         <div class="blob"></div>
         <svg class="dots spin-slow" viewBox="0 0 100 100"><g fill="#7FA8C9"><circle cx="10" cy="50" r="3"/><circle cx="50" cy="10" r="3"/><circle cx="90" cy="50" r="3"/><circle cx="50" cy="90" r="3"/><circle cx="22" cy="22" r="2.4"/><circle cx="78" cy="22" r="2.4"/><circle cx="78" cy="78" r="2.4"/><circle cx="22" cy="78" r="2.4"/></g></svg>
-        <div class="moldura"><img src="/assets/mathias-antes-depois.webp" alt="Antes e depois do Mathias: antes só dormia no colo da mãe, depois dorme sozinho no berço" width="1400" height="788" fetchpriority="high" decoding="async"></div>
+        <div class="moldura"><img src="/assets/mathias-antes-depois.webp" srcset="/assets/mathias-antes-depois-820.webp 820w, /assets/mathias-antes-depois.webp 1400w" sizes="(max-width:900px) 92vw, 520px" alt="Antes e depois do Mathias: antes só dormia no colo da mãe, depois dorme sozinho no berço" width="1400" height="788" fetchpriority="high" decoding="async"></div>
       </div>
     </div>
   </div>
@@ -466,14 +475,8 @@ footer .copy{font-size:12.5px;color:rgba(255,255,255,.4)}
 <!-- ===== GARANTIA ===== -->
 <svg class="curve" viewBox="0 0 1440 60" preserveAspectRatio="none" style="background:#1E4467"><path d="M0 60C360 4 1080 4 1440 60V60H0z" fill="#EAF5FA"/></svg>
 <section class="sec-mist pad" style="padding-top:36px">
-  <div class="wrap">
-    <div class="garantia-grid">
-      <div class="selo reveal"><div class="d">7</div><div class="t">dias de<br>garantia</div></div>
-      <div class="reveal">
-        <h2>7 dias de garantia. <span class="hl-rose">Sem burocracia.</span></h2>
-        <p>Aplica o método, testa com seu bebê. Se por qualquer motivo não for pra vocês, é só pedir o reembolso dentro de 7 dias direto na Greenn. <strong>Sem perguntas. Sem enrolação. Você não tem nada a perder.</strong></p>
-      </div>
-    </div>
+  <div class="wrap center">
+    <h2 class="reveal">7 dias de garantia. <span class="hl-rose">Sem burocracia.</span></h2>
   </div>
 </section>
 
