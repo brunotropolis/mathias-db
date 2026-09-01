@@ -65,11 +65,14 @@ fbq('init', '2103631056813206');
   window.addEventListener('load',function(){ setTimeout(loadClarity,2500); });
 })();
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap"></noscript>
+<!-- Fontes AUTO-HOSPEDADAS (same-origin) — tira 2 origens externas + o swap lento do Google Fonts (ganho de FCP/LCP). Preload da Poppins 700 (H1 = LCP) e Quicksand (corpo). -->
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/poppins-700.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/quicksand-var.woff2" crossorigin>
 <style>
+@font-face{font-family:'Poppins';font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/poppins-500.woff2) format('woff2')}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/poppins-600.woff2) format('woff2')}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/poppins-700.woff2) format('woff2')}
+@font-face{font-family:'Quicksand';font-style:normal;font-weight:400 700;font-display:swap;src:url(/assets/fonts/quicksand-var.woff2) format('woff2')}
 :root{
   /* paleta clara/diurna (criativo Mathias, luminoso) — azul-bebe + blush */
   --bg:#E0F2F7; --mist:#EAF5FA; --surface:#ffffff;
