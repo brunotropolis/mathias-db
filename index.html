@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex"><!-- landing dedicada ao criativo Mathias 008 — nao indexar -->
-<link rel="preload" as="image" href="/assets/bebe-dormindo.webp" fetchpriority="high">
+<link rel="preload" as="image" href="/assets/mathias-antes-depois.webp" fetchpriority="high">
 <title>Dream Baby Pocket — Do colo pro berço, sem choro</title>
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
@@ -68,8 +68,8 @@ fbq('init', '2103631056813206');
   --blush:#F7CAC9; --blush-tint:#FCE9EA; --blush-deep:#F0A6AE; --rose-ink:#C76B79;
   --sand:#F3D8A6; --sand-tint:#FBF0DC; --sand-ink:#B4863A;
   --ink:#2F3E46; --ink-soft:#5C7079;
-  --grad-cta:linear-gradient(100deg,#F7CAC9 0%,#F3B3BA 55%,#EFA1AB 100%);
-  --sombra-cta:0 14px 32px rgba(213,130,146,.42);
+  --grad-cta:linear-gradient(100deg,#0C6E33 0%,#12863E 55%,#179549 100%);
+  --sombra-cta:0 14px 32px rgba(12,110,51,.4);
   --sombra-card:0 16px 38px rgba(46,90,130,.14);
   --deep-top:#3A6591; --deep-bot:#1E4467;
 }
@@ -102,8 +102,10 @@ section{position:relative;overflow:hidden}
 h2{font-size:clamp(27px,4.1vw,41px);margin-bottom:16px;color:var(--ink)}
 .sub{font-size:clamp(16px,2vw,19px);color:var(--ink-soft);line-height:1.65;max-width:660px}
 .center{text-align:center}.center .sub{margin:0 auto}
-.btn-comprar{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Poppins',sans-serif;font-weight:700;color:#7a2d3a;text-decoration:none;text-align:center;background:var(--grad-cta);border:none;cursor:pointer;box-shadow:var(--sombra-cta);transition:transform .25s ease,box-shadow .25s ease;text-transform:none;font-size:clamp(17px,2.6vw,21px);padding:20px 42px;border-radius:100px;line-height:1.25;animation:pulsarCompra 2.8s ease-in-out infinite}
-.btn-comprar:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(213,130,146,.55)}
+.btn-comprar,.btn-hero{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Poppins',sans-serif;font-weight:700;color:#fff;text-decoration:none;text-align:center;background:var(--grad-cta);border:none;cursor:pointer;box-shadow:var(--sombra-cta);transition:transform .25s ease,box-shadow .25s ease;text-transform:none;font-size:clamp(17px,2.6vw,21px);padding:20px 42px;border-radius:100px;line-height:1.25}
+.btn-comprar{animation:pulsarCompra 2.8s ease-in-out infinite}
+.btn-comprar:hover,.btn-hero:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(12,110,51,.52)}
+.btn-hero{gap:9px}
 @keyframes pulsarCompra{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
 @media(prefers-reduced-motion:reduce){.btn-comprar{animation:none}}
 .trust{display:flex;flex-wrap:wrap;gap:9px 18px;font-family:'Poppins',sans-serif;font-weight:600;font-size:13.5px;color:var(--sky-deep);margin-top:20px}
@@ -121,10 +123,12 @@ h2{font-size:clamp(27px,4.1vw,41px);margin-bottom:16px;color:var(--ink)}
 .hero-foto{position:relative;display:flex;justify-content:center}
 .hero-foto .blob{position:absolute;width:106%;height:106%;top:-3%;left:-3%;background:radial-gradient(circle at 60% 40%,rgba(127,168,201,.55),rgba(247,202,201,.42) 46%,transparent 72%);filter:blur(8px);z-index:0;border-radius:48% 52% 55% 45%/50% 48% 52% 50%}
 .hero-foto .dots{position:absolute;z-index:0;top:-20px;right:-8px;width:88px;opacity:.45}
-.hero-foto .moldura{position:relative;z-index:1;width:min(420px,90%);aspect-ratio:4/5;border-radius:32px;overflow:hidden;border:8px solid #fff;box-shadow:0 32px 64px rgba(46,90,130,.3)}
-.hero-foto .moldura img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.hero-foto .moldura{position:relative;z-index:1;width:min(520px,100%);aspect-ratio:16/9;border-radius:26px;overflow:hidden;border:7px solid #fff;box-shadow:0 32px 64px rgba(46,90,130,.3)}
+.hero-foto .moldura img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-cap{position:relative;z-index:1;margin-top:14px;text-align:center;font-size:13.5px;color:var(--ink-soft);font-weight:600;line-height:1.4}
+.hero-cap b{color:var(--sky-ink);font-weight:700}
 @media(max-width:900px){.hero-foto{order:-1}}
-@media(max-width:720px){.hero{padding:24px 0 18px}.hero-grid{gap:16px}.hero-foto .moldura{width:min(222px,58%);aspect-ratio:1/1;border-width:6px}.btn-comprar{width:100%;max-width:420px}}
+@media(max-width:720px){.hero{padding:24px 0 18px}.hero-grid{gap:18px}.hero-foto .moldura{width:100%;border-width:6px}.btn-comprar,.btn-hero{width:100%;max-width:440px}}
 
 /* DORES */
 .dores-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
@@ -295,17 +299,13 @@ footer .copy{font-size:12.5px;color:rgba(255,255,255,.4)}
       <div>
         <h1 class="reveal">Seu colo é o único berço que seu bebê aceita?</h1>
         <p class="lead reveal">Não é manha dele e nem falha sua. É uma <b>associação de sono</b>: ele aprendeu a pegar no sono de um jeito só, no seu colo. E dá pra ensinar ele a dormir no berço sozinho, no ritmo dele, <b>em até 5 dias e sem deixar chorar</b>.</p>
-        <a class="btn-comprar reveal" href="CHECKOUT_MATHIAS">Quero noites mais tranquilas com meu bebê</a>
-        <div class="trust reveal">
-          <span><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Acesso imediato</span>
-          <span><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Sem deixar chorar</span>
-          <span><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Garantia de 7 dias</span>
-        </div>
+        <a class="btn-hero reveal" href="#metodo">Quero meu bebê dormindo no berço <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
       </div>
       <div class="hero-foto reveal">
         <div class="blob"></div>
         <svg class="dots spin-slow" viewBox="0 0 100 100"><g fill="#7FA8C9"><circle cx="10" cy="50" r="3"/><circle cx="50" cy="10" r="3"/><circle cx="90" cy="50" r="3"/><circle cx="50" cy="90" r="3"/><circle cx="22" cy="22" r="2.4"/><circle cx="78" cy="22" r="2.4"/><circle cx="78" cy="78" r="2.4"/><circle cx="22" cy="78" r="2.4"/></g></svg>
-        <div class="moldura"><img src="/assets/bebe-dormindo.webp" alt="Bebê dormindo tranquilo no berço" width="799" height="1200" fetchpriority="high" decoding="async"></div>
+        <div class="moldura"><img src="/assets/mathias-antes-depois.webp" alt="Antes e depois do Mathias: antes só dormia no colo da mãe, depois dorme sozinho no berço" width="1400" height="788" fetchpriority="high" decoding="async"></div>
+        <p class="hero-cap">Do colo o tempo todo → pro berço a noite inteira. <b>História real.</b></p>
       </div>
     </div>
   </div>
@@ -330,24 +330,9 @@ footer .copy{font-size:12.5px;color:rgba(255,255,255,.4)}
   </div>
 </section>
 
-<!-- ===== ANTES / DEPOIS (prova) ===== -->
-<svg class="curve" viewBox="0 0 1440 60" preserveAspectRatio="none" style="background:#F6FBFD"><path d="M0 0C360 56 1080 56 1440 0V60H0z" fill="#FCE9EA"/></svg>
-<section class="sec-blush pad" style="padding-top:30px">
-  <div class="wrap center">
-    <span class="eyebrow reveal" style="color:#A6455A">História real</span>
-    <h2 class="reveal">Do colo o tempo todo… <span class="hl-sky">pro berço a noite inteira</span></h2>
-    <div class="ad-box reveal">
-      <div class="foto">
-        <img src="/assets/mathias-antes-depois.webp" alt="Antes e depois do Mathias: antes só dormia no colo da mãe, depois dorme sozinho no berço" width="1400" height="788" loading="lazy" decoding="async">
-      </div>
-    </div>
-    <p class="ad-cap reveal">Antes, ele só pegava no sono no colo. Depois do Dream Baby, <strong>ele dorme sozinho no berço</strong>. Sem choro.</p>
-  </div>
-</section>
-
 <!-- ===== COMO FUNCIONA ===== -->
-<svg class="curve" viewBox="0 0 1440 60" preserveAspectRatio="none" style="background:#FBF3F0"><path d="M0 60C360 4 1080 4 1440 60V60H0z" fill="#E0F2F7"/></svg>
-<section class="sec-bg pad" style="padding-top:30px">
+<svg class="curve" viewBox="0 0 1440 60" preserveAspectRatio="none" style="background:#F6FBFD"><path d="M0 60C360 4 1080 4 1440 60V60H0z" fill="#E0F2F7"/></svg>
+<section id="metodo" class="sec-bg pad" style="padding-top:30px">
   <div class="wrap center">
     <span class="tag reveal">🕊️ Sem treinamento de choro</span>
     <div class="metodo-intro">
@@ -463,7 +448,7 @@ footer .copy{font-size:12.5px;color:rgba(255,255,255,.4)}
         <div class="rs"><small>R$</small>67</div>
         <div class="parcelado">à vista ou em até 12x de R$ 6,89</div>
       </div>
-      <a class="btn-comprar" href="CHECKOUT_MATHIAS">Quero noites mais tranquilas com meu bebê</a>
+      <a class="btn-comprar" href="CHECKOUT_MATHIAS">Quero meu bebê dormindo no berço</a>
       <div class="selos">
         <span>🔒 Compra 100% segura</span>
         <span>⚡ Acesso imediato</span>
@@ -522,7 +507,7 @@ footer .copy{font-size:12.5px;color:rgba(255,255,255,.4)}
     </div>
     <h2 class="reveal">Seu colo pode voltar a ser colo.<br>E o berço, o lugar de dormir.</h2>
     <p class="sub reveal">Descubra o perfil de sono do seu bebê e saia com o plano na mão pra ensinar ele a dormir sozinho, no ritmo dele. <strong style="color:#fff;display:block;margin-top:12px">Por R$67, você começa a mudar isso hoje.</strong></p>
-    <div class="reveal" style="margin-top:30px"><a class="btn-comprar" href="CHECKOUT_MATHIAS">Quero noites mais tranquilas com meu bebê</a></div>
+    <div class="reveal" style="margin-top:30px"><a class="btn-comprar" href="CHECKOUT_MATHIAS">Quero meu bebê dormindo no berço</a></div>
   </div>
 </section>
 
