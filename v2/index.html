@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<!-- AB mathias v2 (23/09): hero->preco, selo 30min->metodo, ancora R$97 riscado -->
+<!-- AB mathias v2 (23/09): hero->preco, selo 30min->preco, ancora R$97 riscado -->
 <script>/* fix-fragment-utm 17/Set/2026: o url_tags da Meta substitui {{campaign.name}} CRU na URL; o "#id" do nome de campanha vira fragment e corta utm_campaign (e perde utm_medium/utm_content). Recola o pedaco perdido na query ANTES de qualquer script ler location.search. */
 (function(){try{var h=location.hash,s=location.search;if(!h||h.indexOf('&utm_')===-1||s.indexOf('utm_')===-1)return;var raw=h.slice(1),i=raw.indexOf('&'),head=raw.slice(0,i),tail=raw.slice(i+1);try{head=decodeURIComponent(head)}catch(e){}var q=new URLSearchParams(s),last=null;q.forEach(function(v,k){last=k});if(last&&head)q.set(last,(q.get(last)||'')+'#'+head);tail.split('&').forEach(function(kv){var j=kv.indexOf('=');if(j<1)return;var k=kv.slice(0,j),v=kv.slice(j+1);try{k=decodeURIComponent(k)}catch(e){}try{v=decodeURIComponent(v)}catch(e){}if(!q.get(k))q.set(k,v)});history.replaceState(null,'',location.pathname+'?'+q.toString())}catch(e){}})();</script>
 <meta charset="UTF-8">
@@ -360,7 +360,7 @@ footer .copy{font-size:12.5px;color:rgba(255,255,255,.4)}
       <div class="passo reveal"><span class="num">03</span><div><h4>Siga o plano</h4><p>O passo a passo da transição pro berço, soneca e noite.</p></div></div>
       <div class="passo reveal"><span class="num">04</span><div><h4>Bebê dormindo sozinho</h4><p>Você aplica no ritmo dele, em até 5 dias, sem choro.</p></div></div>
     </div>
-    <a class="clock-badge reveal" href="#metodo" style="text-decoration:none"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg>Do quiz ao plano na mão em cerca de 30 minutos</a>
+    <a class="clock-badge reveal" href="#preco" style="text-decoration:none"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg>Do quiz ao plano na mão em cerca de 30 minutos</a>
   </div>
 </section>
 
@@ -458,7 +458,8 @@ footer .copy{font-size:12.5px;color:rgba(255,255,255,.4)}
         <div class="incluso"><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5" stroke="#fff" stroke-width="3.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Acesso por 12 meses · 7 dias de garantia incondicional</div>
       </div>
       <div class="preco-valor">
-        <div class="de">De <s style="opacity:.75">R$ 97,00</s> por apenas</div>
+        <div class="de" style="font-size:18px;margin-bottom:2px">De <s style="opacity:.75">R$ 97,00</s></div>
+        <div class="de">por apenas</div>
         <div class="rs"><small>R$</small>67</div>
         <div class="parcelado">à vista ou em até 12x de R$ 6,89</div>
       </div>
